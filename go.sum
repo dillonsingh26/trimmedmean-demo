@@ -1,0 +1,4 @@
+github.com/dillonsingh26/trimmedmean v1.0.0 h1:zreyBH2ZH+GERd5LzCeqCERCYxy92ztLcZqQayREQ10=
+github.com/dillonsingh26/trimmedmean v1.0.0/go.mod h1:h2SAANW3KByJyO7xylOXOG2kijIJEufrcy7e02JvY20=
+github.com/seehuhn/mt19937 v1.0.0 h1:r02DuVkQXfohssWZO8L/TeAlYOah7aNNubEHB/7Vtfs=
+github.com/seehuhn/mt19937 v1.0.0/go.mod h1:RikyXajNu+1Gqxm4hOacc3ckyWRd0usF6IkE3gnEcAM=

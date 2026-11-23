@@ -1,0 +1,35 @@
+# Continuous integration: GitHub runs these checks on every push and pull
+# request. The green check or red X appears next to each commit on GitHub.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Tests, with the race detector
+        run: go test -race -cover ./...
+
+      - name: Go-vs-R comparison (fails if any result differs from R)
+        run: go run . compare
+
+      - name: Bootstrap study
+        run: go run . bootstrap
+
+      - name: Build executables for Mac and Windows
+        run: make dist

@@ -1,0 +1,13 @@
+time=2026-11-19T16:35:58.630-05:00 level=INFO msg="bootstrap study starting" sizes="[25 100 225 400]" iterations=500 resamples=1000 workers=10 seed=9999
+time=2026-11-19T16:36:00.836-05:00 level=INFO msg="bootstrap study finished" elapsed=2.2057s jobs=2000 allocated_mb=3188.2 gc_cycles=974
+Bootstrap study: standard errors of three estimates of the center
+Population: Normal(mean 100, SD 10), with probability 0.01 of an outlier from Normal(mean 200, SD 1)
+500 repetitions x 1000 bootstrap resamples; trimmed mean drops 5% from each end
+
+     n   Theory (no outliers)   Sample mean   Bootstrap mean   Bootstrap median   Bootstrap trimmed mean    Most stable
+    25                   2.00          2.82             2.83               2.32                     2.37         median
+   100                   1.00          1.36             1.35               1.22                     1.04   trimmed mean
+   225                   0.67          0.94             0.94               0.78                     0.68   trimmed mean
+   400                   0.50          0.70             0.70               0.64                     0.53   trimmed mean
+
+Lower is more stable. Theory is SD/sqrt(n): the mean's standard error if there were no outliers.

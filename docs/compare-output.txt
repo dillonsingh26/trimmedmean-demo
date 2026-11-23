@@ -1,0 +1,27 @@
+Go trimmed means compared with R's mean(x, trim = p)
+
+          Sample      n   Trim                   Go                    R   Go − R
+    integers-100    100   0.00   54.640000000000001   54.640000000000001        0
+    integers-100    100   0.05   48.555555555555557   48.555555555555557        0
+    integers-100    100   0.10   48.424999999999997   48.424999999999997        0
+    integers-100    100   0.20   48.299999999999997   48.299999999999997        0
+   integers-1001   1001   0.00   54.885114885114888   54.885114885114888        0
+   integers-1001   1001   0.05   50.521642619311876   50.521642619311876        0
+   integers-1001   1001   0.10    50.40449438202247    50.40449438202247        0
+   integers-1001   1001   0.20   50.277870216306155   50.277870216306155        0
+      floats-100    100   0.00   106.97873763185945   106.97873763185945        0
+      floats-100    100   0.05   103.58210324871303   103.58210324871303        0
+      floats-100    100   0.10   103.82164037504052   103.82164037504052        0
+      floats-100    100   0.20   104.05109774883805   104.05109774883805        0
+     floats-1001   1001   0.00   105.39079996477666   105.39079996477666        0
+     floats-1001   1001   0.05   101.59338533240729   101.59338533240729        0
+     floats-1001   1001   0.10   101.37984050540919   101.37984050540919        0
+     floats-1001   1001   0.20   101.26163347713361   101.26163347713361        0
+
+16 of 16 Go results are identical to R's, to all 17 significant digits.
+Trim 0.00 is the ordinary mean; the outliers pull it well above the trimmed means.
+
+Asymmetric trimming (Go only; R's mean() trims both ends equally)
+floats-100 has 5 outliers near 200, all on the high side:
+  5% from each end:          103.5821  (also drops the 5 lowest ordinary values)
+  5% from the high end only: 102.0832  (drops just the outliers)

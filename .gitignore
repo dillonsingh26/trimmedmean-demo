@@ -1,0 +1,11 @@
+# Built programs
+/trimstats
+/trimstats.exe
+dist/
+
+# Test and profiling output
+coverage.out
+*.prof
+
+# macOS
+.DS_Store
